@@ -14,7 +14,7 @@ describe Interviewee, '#name' do
 
 
   it 'responds to #twitter_handle' do
-		interviewee = Interviewee.new(twitter_handle: '@steve_huffmann')
+		interviewee = interviewee_with_twitter_handle 
 		expect(interviewee).to respond_to :twitter_handle
 	end
 
@@ -25,8 +25,13 @@ describe Interviewee, '#name' do
 
 end
 
+def interviewee_has_twitter_handle(twitter_handle)
+  create(interviewee, twitter_handle: twitter_handle)
+end
 
-
+def interviewee_with_twitter_handle 
+  create(:interviewee, twitter_handle: '@steve_huffmann')
+end
 
 
 def named_interviewee
