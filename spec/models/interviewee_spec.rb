@@ -44,18 +44,28 @@ describe Interviewee  do
 	context '#about_text' do
 
 		it 'responds to #about_text' do
-      interviewee = Interviewee.new(about_text: 'Once upon a time')
+      interviewee = interviewee_has_about_text
       expect(interviewee).to respond_to :about_text
 		end
 
 		it 'returns the correct weblink' do
-      interviewee = Interviewee.new(about_text: 'Once upon a time')
-      expect(interviewee.about_text).to eq 'Once upon a time'
+      interviewee = interviewee_with_about_text 'He was a co-founder ...'
+      expect(interviewee.about_text).to eq 'He was a co-founder ...'
 		end
 	end
 
 end
 
+
+
+
+def interviewee_has_about_text
+	interviewee_with_about_text 'Some about text goes in here'
+end
+
+def interviewee_with_about_text(description)
+  create(:interviewee, about_text: description)
+end
 
 def interviewee_has_weblink
   interviewee_with_weblink 'www.hipmunk.com'
