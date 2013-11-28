@@ -14,4 +14,17 @@ describe Video do
 			expect(video.title).to eq "Stanford is at the heart of the ecosystem"
 		end
 	end
+
+	context '#description' do
+
+		it 'responds to description' do
+      video = Video.new(description: "This video explains the stuff")
+			expect(video).to respond_to :description
+		end
+
+		it 'returns the correct description' do
+      video = Video.new(description: "This video explains the stuff")
+			expect(video.description).to eq "This video explains the stuff"
+		end
+	end
 end
