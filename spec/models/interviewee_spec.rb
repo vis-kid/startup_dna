@@ -11,7 +11,21 @@ describe Interviewee, '#name' do
     interviewee = interviewee_named 'Steve Huffmann'
 		expect(interviewee.name).to eq'Steve Huffmann'
 	end
+
+
+  it 'responds to #twitter_handle' do
+		interviewee = Interviewee.new(twitter_handle: '@steve_huffmann')
+		expect(interviewee).to respond_to :twitter_handle
+	end
+
+  it 'returns the correct twitter_handle' do
+    interviewee = Interviewee.new(twitter_handle: '@steve_huffmann')
+		expect(interviewee.twitter_handle).to eq '@steve_huffmann'
+	end
+
 end
+
+
 
 
 
