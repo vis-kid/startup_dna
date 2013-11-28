@@ -27,6 +27,29 @@ describe Video do
 			expect(video.description).to eq 'This video explains the stuff'
 		end
 	end
+
+	context '#quote' do
+
+		it 'responds to quote' do
+      video = video_has_a_quote
+			expect(video).to respond_to :quote
+		end
+
+		it 'returns the correct quote' do
+      video = video_with_quote 'Stanford is the best'
+			expect(video.quote).to eq 'Stanford is the best'
+		end
+	end
+end
+
+
+
+def video_has_a_quote
+  video_with_quote 'Some quote'
+end
+
+def video_with_quote(quote)
+	create(:video, quote: quote)
 end
 
 def video_with_description

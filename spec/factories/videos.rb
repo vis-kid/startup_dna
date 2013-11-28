@@ -1,6 +1,7 @@
 FactoryGirl.define do
 	factory :video do
-    title 'My awesome title'
+		quote 'Stanford was good for me'
+    title 'Education and University'
 		description 'Once upon a time'
 	end
 end
