@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128151229) do
+ActiveRecord::Schema.define(version: 20131128153325) do
 
   create_table "interviewees", force: true do |t|
     t.string   "name"
@@ -25,5 +25,11 @@ ActiveRecord::Schema.define(version: 20131128151229) do
   add_index "interviewees", ["name"], name: "index_interviewees_on_name"
   add_index "interviewees", ["twitter_handle"], name: "index_interviewees_on_twitter_handle"
   add_index "interviewees", ["weblink"], name: "index_interviewees_on_weblink"
+
+  create_table "videos", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
