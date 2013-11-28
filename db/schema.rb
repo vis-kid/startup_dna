@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128133417) do
+ActiveRecord::Schema.define(version: 20131128151229) do
 
   create_table "interviewees", force: true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131128133417) do
     t.datetime "updated_at"
     t.string   "twitter_handle"
     t.string   "weblink"
+    t.text     "about_text"
   end
 
   add_index "interviewees", ["name"], name: "index_interviewees_on_name"
