@@ -28,7 +28,6 @@ describe Interviewee  do
 		end
 	end
 
-
 	context '#weblink' do
 
 		it 'responds to #weblink' do
@@ -42,6 +41,18 @@ describe Interviewee  do
 		end
 	end
 	
+	context '#about_text' do
+
+		it 'responds to #about_text' do
+      interviewee = Interviewee.new(about_text: 'Once upon a time')
+      expect(interviewee).to respond_to :about_text
+		end
+
+		it 'returns the correct weblink' do
+      interviewee = Interviewee.new(about_text: 'Once upon a time')
+      expect(interviewee.about_text).to eq 'Once upon a time'
+		end
+	end
 
 end
 
