@@ -42,8 +42,6 @@ describe Video do
 	end
 end
 
-
-
 def video_has_a_quote
   video_with_quote 'Some quote'
 end
