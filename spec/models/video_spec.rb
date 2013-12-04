@@ -55,7 +55,14 @@ describe Video do
       video = create(:video)
 			expect(video).to respond_to :vimeo_id
 		end
+	end
 
+
+	describe Video, '#interviewee' do
+		it 'responds to interviewee' do
+			video = create(:video)
+			expect(video).to respond_to :interviewee
+		end
 	end
 
 end
