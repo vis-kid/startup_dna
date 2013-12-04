@@ -9,6 +9,7 @@ feature 'View the videos page' do
 
 		expect(page).to have_title 'Videos'
 		expect(page).to have_css "[data-role='video_title']" 
+		expect(page).to have_css "[data-role='video_quote']" 
 		expect(page).to have_content 'First video'
 		expect(page).to have_css 'li.video', count: 2
 		expect(page).not_to have_css 'li.video', count: 3
