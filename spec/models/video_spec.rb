@@ -58,7 +58,7 @@ describe Video do
 	end
 
 
-	describe Video, '#interviewee' do
+	describe 'association with Interviewee through #interviewee' do
 		it 'responds to interviewee' do
 			video = create(:video)
 			expect(video).to respond_to :interviewee

@@ -3,6 +3,8 @@
 <h1>Hello Videos</h1>
 <% @videos.each do |video| %>
   <ul>
-    <li class=video><%= video.title %></li>
+		<li class=video>
+		  <h3 data-role='video_title'><%= video.title %></h3>
+		</li>
 	</ul>
 <% end %>
