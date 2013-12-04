@@ -52,6 +52,7 @@ Spork.prefork do
 		# instead of writing FactoryGirl.create(:user)
 		# => create(:user)
 		config.include FactoryGirl::Syntax::Methods
+    config.include Capybara::DSL
 	end
 
 end
