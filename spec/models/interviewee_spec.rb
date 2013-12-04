@@ -62,16 +62,25 @@ describe Interviewee do
 		end
 
 		it 'associates user to user-specific videos' do
-			right_interviewee = create(:interviewee)
-			correct_video = create(:video, title: 'Correct video')
-			other_video = create(:video, title: 'Other video')
-			right_interviewee.videos << correct_video
+			interviewee = basic_interviewee 
+			correct_video = basic_video 
+			other_video = basic_video
 
-			expect(right_interviewee.videos).to include correct_video
-			expect(right_interviewee.videos).not_to include other_video
-			expect(right_interviewee.videos.length).to eq 1
+			interviewee.videos << correct_video
+
+			expect(interviewee.videos).to include correct_video
+			expect(interviewee.videos).not_to include other_video
+			expect(interviewee.videos.length).to eq 1
 
 		end
+	end
+
+	def basic_interviewee
+    create(:interviewee)
+	end
+
+	def basic_video
+    create(:video)
 	end
 
 end
