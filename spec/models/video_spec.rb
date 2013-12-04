@@ -51,8 +51,8 @@ describe Video do
 
 	context '#vimeo_id' do
 
-		xit 'responds to vimeo_id' do
-      video = create(:video, vimeo_id: '')
+		it 'responds to vimeo_id' do
+      video = create(:video)
 			expect(video).to respond_to :vimeo_id
 		end
 
