@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204102619) do
+ActiveRecord::Schema.define(version: 20131204124437) do
 
   create_table "interviewees", force: true do |t|
     t.string   "name"
@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 20131204102619) do
     t.text     "description"
     t.string   "quote"
     t.string   "youtube_id"
+    t.string   "vimeo_id"
   end
 
+  add_index "videos", ["vimeo_id"], name: "index_videos_on_vimeo_id"
   add_index "videos", ["youtube_id"], name: "index_videos_on_youtube_id"
 
 end
