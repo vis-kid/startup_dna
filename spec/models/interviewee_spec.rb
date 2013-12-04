@@ -54,6 +54,13 @@ describe Interviewee do
 		end
 	end
 
+	describe Interviewee, '#videos' do
+		it 'responds to video' do
+			interviewee = create(:interviewee)
+			expect(interviewee).to respond_to :videos
+		end
+	end
+
 end
 
 
