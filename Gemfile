@@ -31,6 +31,7 @@ group :test, :development do
 	gem 'spork-rails', github: 'sporkrb/spork-rails'
 	gem 'guard-spork', :github => 'guard/guard-spork'
 	gem 'rb-fsevent'
+	gem 'simplecov'
 end
 
 group :test do
