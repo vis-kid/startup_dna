@@ -47,33 +47,17 @@ describe Video do
       video = create(:video, youtube_id: '12345678910')
 			expect(video).to respond_to :youtube_id
 		end
+	end
 
-		it 'returns the correct youtube_id' do
-      video = create(:video, youtube_id: '12345678910')
-			expect(video.youtube_id).to eq '12345678910'
+	context '#vimeo_id' do
+
+		xit 'responds to vimeo_id' do
+      video = create(:video, vimeo_id: '')
+			expect(video).to respond_to :vimeo_id
 		end
-
-		it 'has the correct length' do
-			video = video_with_correct_youtube_id_length
-			expect(video).to be_valid
-		end
-
-		it 'fails with the incorrect length' do
-			video = video_with_incorrect_youtube_id_length
-			video.should_not be_valid
-		end
-
-
 
 	end
-end
 
-def video_with_correct_youtube_id_length
-  build(:video, youtube_id: '12345678910')
-end
-
-def video_with_incorrect_youtube_id_length
-  build(:video, youtube_id: '1')
 end
 
 def video_has_a_quote

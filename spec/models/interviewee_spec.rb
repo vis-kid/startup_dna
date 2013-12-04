@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Interviewee  do
+describe Interviewee do
 
 	context '#name' do
 
