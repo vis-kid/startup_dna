@@ -79,11 +79,11 @@ end
 
 
 def basic_interviewee
-	create(:interviewee)
+	create :interviewee
 end
 
 def basic_video
-	create(:video)
+	create :video
 end
 
 def interviewee_has_about_text
@@ -91,7 +91,7 @@ def interviewee_has_about_text
 end
 
 def interviewee_with_about_text(description)
-  create(:interviewee, about_text: description)
+  create :interviewee, about_text: description
 end
 
 def interviewee_has_weblink
@@ -99,7 +99,7 @@ def interviewee_has_weblink
 end
 
 def interviewee_with_weblink(weblink)
-  create(:interviewee, weblink: weblink)
+  create :interviewee, weblink: weblink
 end
 
 def interviewee_has_twitter_handle
@@ -107,7 +107,7 @@ def interviewee_has_twitter_handle
 end
 
 def interviewee_with_twitter_handle(twitter_handle)
-	create(:interviewee, twitter_handle: twitter_handle)
+	create :interviewee, twitter_handle: twitter_handle
 end
 
 def named_interviewee
@@ -115,7 +115,5 @@ def named_interviewee
 end
 
 def interviewee_named(name)
-	create(:interviewee, name: name)
+	create :interviewee, name: name
 end
-
-

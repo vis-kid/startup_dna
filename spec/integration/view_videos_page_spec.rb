@@ -16,6 +16,6 @@ feature 'View the videos page' do
 	end
 
 	def video_with_title(title)
-    create(:video, title: title)
+    create :video, title: title
 	end
 end

@@ -44,7 +44,7 @@ describe Video do
 	context '#youtube_id' do
 
 		it 'responds to youtube_id' do
-      video = create(:video, youtube_id: '12345678910')
+      video = create :video, youtube_id: '12345678910'
 			expect(video).to respond_to :youtube_id
 		end
 	end
@@ -52,7 +52,7 @@ describe Video do
 	context '#vimeo_id' do
 
 		it 'responds to vimeo_id' do
-      video = create(:video)
+      video = create :video
 			expect(video).to respond_to :vimeo_id
 		end
 	end
@@ -61,7 +61,7 @@ describe Video do
 	describe 'Interviewee association through #interviewee' do
 
 		it 'responds to interviewee' do
-			video = create(:video)
+			video = create :video
 			expect(video).to respond_to :interviewee
 		end
 	end
@@ -73,7 +73,7 @@ def video_has_a_quote
 end
 
 def video_with_quote(quote)
-	create(:video, quote: quote)
+	create :video, quote: quote
 end
 
 def video_with_description
@@ -81,7 +81,7 @@ def video_with_description
 end
 
 def video_has_description description
-	create(:video, description: description)
+	create :video, description: description
 end
 
 def video_with_title
@@ -89,5 +89,5 @@ def video_with_title
 end
 
 def video_has_title(title)
-	video = create(:video, title: title)
+	video = create :video, title: title
 end
