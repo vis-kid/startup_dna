@@ -58,7 +58,8 @@ describe Video do
 	end
 
 
-	describe 'association with Interviewee through #interviewee' do
+	describe 'Interviewee association through #interviewee' do
+
 		it 'responds to interviewee' do
 			video = create(:video)
 			expect(video).to respond_to :interviewee
@@ -90,4 +91,3 @@ end
 def video_has_title(title)
 	video = create(:video, title: title)
 end
-

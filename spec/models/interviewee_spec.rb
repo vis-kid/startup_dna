@@ -54,10 +54,10 @@ describe Interviewee do
 		end
 	end
 
-	describe Interviewee, '#videos' do
+	describe "Interviewee_Video association #videos"do
 
 		it 'responds to video' do
-			interviewee = create(:interviewee)
+			interviewee = basic_interviewee 
 			expect(interviewee).to respond_to :videos
 		end
 
@@ -74,19 +74,17 @@ describe Interviewee do
 
 		end
 	end
-
-	def basic_interviewee
-    create(:interviewee)
-	end
-
-	def basic_video
-    create(:video)
-	end
-
 end
 
 
 
+def basic_interviewee
+	create(:interviewee)
+end
+
+def basic_video
+	create(:video)
+end
 
 def interviewee_has_about_text
 	interviewee_with_about_text 'Some about text goes in here'
