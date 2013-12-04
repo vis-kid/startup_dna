@@ -55,9 +55,22 @@ describe Interviewee do
 	end
 
 	describe Interviewee, '#videos' do
+
 		it 'responds to video' do
 			interviewee = create(:interviewee)
 			expect(interviewee).to respond_to :videos
+		end
+
+		it 'associates user to user-specific videos' do
+			right_interviewee = create(:interviewee)
+			correct_video = create(:video, title: 'Correct video')
+			other_video = create(:video, title: 'Other video')
+			right_interviewee.videos << correct_video
+
+			expect(right_interviewee.videos).to include correct_video
+			expect(right_interviewee.videos).not_to include other_video
+			expect(right_interviewee.videos.length).to eq 1
+
 		end
 	end
 
