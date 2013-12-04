@@ -40,6 +40,40 @@ describe Video do
 			expect(video.quote).to eq 'Stanford is the best'
 		end
 	end
+
+	context '#youtube_id' do
+
+		it 'responds to youtube_id' do
+      video = create(:video, youtube_id: '12345678910')
+			expect(video).to respond_to :youtube_id
+		end
+
+		it 'returns the correct youtube_id' do
+      video = create(:video, youtube_id: '12345678910')
+			expect(video.youtube_id).to eq '12345678910'
+		end
+
+		it 'has the correct length' do
+			video = video_with_correct_youtube_id_length
+			expect(video).to be_valid
+		end
+
+		it 'fails with the incorrect length' do
+			video = video_with_incorrect_youtube_id_length
+			video.should_not be_valid
+		end
+
+
+
+	end
+end
+
+def video_with_correct_youtube_id_length
+  build(:video, youtube_id: '12345678910')
+end
+
+def video_with_incorrect_youtube_id_length
+  build(:video, youtube_id: '1')
 end
 
 def video_has_a_quote
