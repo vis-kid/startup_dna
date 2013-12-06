@@ -20,15 +20,15 @@ describe Video do
 	context '#category' do
 
 		it 'responds to category' do
-			video = video_with_category
+			video = video_has_category
 
 			expect(video).to respond_to :category
 		end
 
 		it 'returns the correct category' do
-      video = video_has_category "Stanford and the Valley"
+      video = video_with_category 'Stanford and the Valley'
 
-			expect(video.category).to eq "Stanford and the Valley"
+			expect(video.category).to eq 'Stanford and the Valley'
 		end
 	end
 
@@ -73,11 +73,18 @@ describe Video do
 			expect(video).to respond_to :interviewee
 		end
 	end
+end
 
+def video_has_category
+  video_with_category 'Some awesome category'
+end
+
+def video_with_category(category)
+	create :video, category: category
 end
 
 def video_has_a_quote
-  video_with_quote 'Some quote'
+	video_with_quote 'Some quote'
 end
 
 def video_with_quote(quote)
@@ -88,14 +95,7 @@ def video_with_description
 	video_has_description 'Some awesome description'
 end
 
-def video_has_description description
+def video_has_description(description)
 	create :video, description: description
 end
 
-def video_with_category
-	video_has_category 'Some awesome title'
-end
-
-def video_has_category(category)
-	video = create :video, category: category
-end
