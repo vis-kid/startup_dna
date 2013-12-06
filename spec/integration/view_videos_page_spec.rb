@@ -2,6 +2,12 @@ require 'spec_helper'
 
 feature 'View the videos page' do
 
+	scenario 'User sees header "NEW VIDEO"' do
+		visit videos_path
+		expect(page).to have_css "[data-role='page_header']"
+		expect(page).to have_content 'New Video'
+	end
+
 	scenario 'User sees video timeline with video#title' do
     video01 = video_with_title 'First video'
     video02 = video_with_title 'Second video'
