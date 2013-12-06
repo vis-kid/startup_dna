@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'View the videos page' do
 
-	scenario 'User sees header "NEW VIDEO"' do
+	background do
 		visit videos_path
 	end
 
@@ -36,12 +36,19 @@ feature 'View the videos page' do
     video02 = video_with_title 'Second video'
 		visit videos_path
 
-		expect(page).to have_title 'Videos'
-		expect(page).to have_css "[data-role='video_title']" 
-		expect(page).to have_css "[data-role='video_quote']" 
-		expect(page).to have_content 'First video'
-		expect(page).to have_css 'li.video', count: 2
-		expect(page).not_to have_css 'li.video', count: 3
+		user_sees_content 'First video'
+		page_loads_correct_amount_of_videos 2
+		page_not_loads_incorrect_amount_of_videos 3
+	end
+
+
+
+	def page_not_loads_incorrect_amount_of_videos count 
+		expect(page).not_to have_css 'li.video', count: count
+	end
+
+	def page_loads_correct_amount_of_videos count
+		expect(page).to have_css 'li.video', count: count
 	end
 
 	def video_with_title(title)
