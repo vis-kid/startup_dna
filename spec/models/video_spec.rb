@@ -5,13 +5,13 @@ describe Video do
 	context '#title' do
 
 		it 'responds to title' do
-			video = video_with_title
-			expect(video).to respond_to :title
+			video = video_with_category
+			expect(video).to respond_to :category
 		end
 
-		it 'returns the correct title' do
-      video = video_has_title "Stanford is at the heart of the ecosystem"
-			expect(video.title).to eq "Stanford is at the heart of the ecosystem"
+		it 'returns the correct category' do
+      video = video_has_category "Stanford and the Valley"
+			expect(video.category).to eq "Stanford and the Valley"
 		end
 	end
 
@@ -57,7 +57,6 @@ describe Video do
 		end
 	end
 
-
 	describe 'Interviewee association through #interviewee' do
 
 		it 'responds to interviewee' do
@@ -84,10 +83,10 @@ def video_has_description description
 	create :video, description: description
 end
 
-def video_with_title
-	video_has_title 'Some awesome title'
+def video_with_category
+	video_has_category 'Some awesome title'
 end
 
-def video_has_title(title)
-	video = create :video, title: title
+def video_has_category(category)
+	video = create :video, category: category
 end

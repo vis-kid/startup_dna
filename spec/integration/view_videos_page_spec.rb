@@ -23,20 +23,20 @@ feature 'View the videos page' do
 		user_sees_content 'I have a quote'
 	end
 
-	scenario 'User sees title of videos' do
-		video_with_quote = create(:video, title: 'I have a title')
+	scenario 'User sees category of videos' do
+		video_with_category = create(:video, category: 'I have a category')
 		visit videos_path
 
-		element_has_correct_data_role 'video_title'
-		user_sees_content 'I have a title'
+		element_has_correct_data_role 'video_category'
+		user_sees_content 'I have a category'
 	end
 
 	scenario 'User sees video timeline' do
-    video01 = video_with_title 'First video'
-    video02 = video_with_title 'Second video'
+    video01 = video_with_category 'Programming & Education'
+    video02 = video_with_category 'Venture Capital'
 		visit videos_path
 
-		user_sees_content 'First video'
+		user_sees_content 'Programming & Education'
 		page_loads_correct_amount_of_videos 2
 		page_not_loads_incorrect_amount_of_videos 3
 	end
@@ -51,7 +51,7 @@ feature 'View the videos page' do
 		expect(page).to have_css 'li.video', count: count
 	end
 
-	def video_with_title(title)
-    create :video, title: title
+	def video_with_category(category)
+    create :video, category: category
 	end
 end
