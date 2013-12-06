@@ -6,11 +6,11 @@ feature 'View the videos page' do
 		visit videos_path
 	end
 
-	scenario 'user sees correct title' do
+	scenario 'user sees correct page title' do
 		user_sees_correct_page_title 'Videos'
 	end
 
-	scenario 'user sees header "new video"' do
+	scenario 'user sees Header "New Video"' do
 		element_has_correct_data_role 'page_header'
 		user_sees_content 'New Video'
 	end

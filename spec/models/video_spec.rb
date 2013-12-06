@@ -75,6 +75,7 @@ describe Video do
 	end
 end
 
+
 def video_has_category
   video_with_category 'Some awesome category'
 end
@@ -98,4 +99,3 @@ end
 def video_has_description(description)
 	create :video, description: description
 end
-
