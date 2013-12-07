@@ -35,13 +35,13 @@ describe Video do
 	context '#description' do
 
 		it 'responds to description' do
-      video = video_with_description
+      video = video_has_description
 
 			expect(video).to respond_to :description
 		end
 
 		it 'returns the correct description' do
-      video = video_has_description 'This video explains the stuff'
+      video = video_with_description 'This video explains the stuff'
 
 			expect(video.description).to eq 'This video explains the stuff'
 		end
@@ -73,29 +73,4 @@ describe Video do
 			expect(video).to respond_to :interviewee
 		end
 	end
-end
-
-
-def video_has_category
-  video_with_category 'Some awesome category'
-end
-
-def video_with_category(category)
-	create :video, category: category
-end
-
-def video_has_a_quote
-	video_with_quote 'Some quote'
-end
-
-def video_with_quote(quote)
-	create :video, quote: quote
-end
-
-def video_with_description
-	video_has_description 'Some awesome description'
-end
-
-def video_has_description(description)
-	create :video, description: description
 end
