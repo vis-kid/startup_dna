@@ -24,7 +24,6 @@ feature 'View the videos page' do
 		user_sees_content 'Matz'
 	end
 
-
 	scenario 'User sees quote of videos' do
 		video = video_with_quote 'I have a quote'
 		interviewee = basic_interviewee
@@ -64,13 +63,13 @@ feature 'View the videos page' do
 		page_does_not_load_incorrect_amount_of_videos 3
 	end
 
-
-	def page_does_not_load_incorrect_amount_of_videos count 
-		expect(page).not_to have_css 'li.video', count: count
-	end
-
-	def page_loads_correct_amount_of_videos count
-		expect(page).to have_css 'li.video', count: count
-	end
-
 end
+
+def page_does_not_load_incorrect_amount_of_videos count 
+	expect(page).not_to have_css 'li.video', count: count
+end
+
+def page_loads_correct_amount_of_videos count
+	expect(page).to have_css 'li.video', count: count
+end
+
