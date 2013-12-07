@@ -9,7 +9,7 @@ feature 'View the videos page' do
 
 	scenario 'User sees Header "New Video"' do
 		visit videos_path
-		element_has_correct_data_role 'page_header'
+		page_has_correct_data_role 'page_header'
 		user_sees_content 'New Video'
 	end
 
@@ -20,7 +20,7 @@ feature 'View the videos page' do
 
 		visit videos_path
 
-		element_has_correct_data_role 'interviewee_name'
+		page_has_correct_data_role 'interviewee_name'
 		user_sees_content 'Matz'
 	end
 
@@ -31,7 +31,7 @@ feature 'View the videos page' do
 
 		visit videos_path
 
-		element_has_correct_data_role 'video_quote'
+		page_has_correct_data_role 'video_quote'
 		user_sees_content 'I have a quote'
 	end
 
@@ -42,8 +42,19 @@ feature 'View the videos page' do
 
 		visit videos_path
 
-		element_has_correct_data_role 'video_category'
+		page_has_correct_data_role 'video_category'
 		user_sees_content 'Programming & Education'
+	end
+
+  scenario 'User sees video description' do
+		video = video_with_description 'Steve describes the early days of Reddit'
+		interviewee = basic_interviewee
+		interviewee.videos << video
+
+    visit videos_path
+
+		user_sees_content 'Steve describes the early days of Reddit'
+    page_has_correct_data_role 'video_description'
 	end
 
 	scenario 'User sees video timeline' do
