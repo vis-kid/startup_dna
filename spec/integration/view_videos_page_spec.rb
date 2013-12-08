@@ -53,7 +53,7 @@ feature 'View the videos page' do
 
     visit videos_path
 
-		user_sees.content 'Steve describes the early days of Reddit'
+		user_sees_content 'Steve describes the early days of Reddit'
     page_has_correct_data_role 'video_description'
 	end
 
