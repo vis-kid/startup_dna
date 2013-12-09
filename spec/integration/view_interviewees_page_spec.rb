@@ -28,6 +28,32 @@ feature 'View the interviewees page' do
 
 	end
 
+  scenario 'User sees Interviewee about_texts' do
+		interviewee01 = interviewee_with_about_text 'David founded Hackbright Academy'
+		interviewee02 = interviewee_with_about_text 'Christian co-founded Hackbright Academy'
+
+    visit interviewees_path
+
+		user_sees_content 'David founded Hackbright Academy'
+    page_has_correct_data_role 'interviewee_about_text'
+	end
+
+  scenario 'User sees Interviewee names' do
+		david =  interviewee_named 'David J. Phillips'
+		chrisz = interviewee_named 'Christian Fernandez'
+
+    visit interviewees_path
+
+    page_has_correct_data_role 'interviewee_name'
+    user_sees_content 'David J. Phillips'
+    user_sees_content 'Christian Fernandez'
+	end
+end
+
+def interviewee_with_about_text(about_text)
+	create :interviewee, about_text: about_text
+end
+
 def page_loads_correct_amount_of_interviewees count
 	expect(page).to have_css 'li.interviewee', count: count
 end
