@@ -64,6 +64,33 @@ feature 'View the interviewees page' do
     page_has_correct_data_role 'interviewee_weblink'
     user_sees_content 'www.hackbrightacademy.com'
 	end
+
+  scenario 'User sees Interviewee videos link' do
+		interviewee_has_video
+
+    visit interviewees_path
+
+    page_has_correct_data_role 'interviewee_video_link'
+	end
+
+  scenario 'User sees Interviewee videos counter' do
+		interviewee_has_video
+
+    visit interviewees_path
+
+		expect(page).to have_css 'span.video_counter', text: '1'
+	end
+end
+
+
+
+
+
+def interviewee_has_video
+	interviewee = basic_interviewee
+	video = basic_video
+
+	interviewee.videos << video
 end
 
 def interviewee_with_about_text(about_text)
