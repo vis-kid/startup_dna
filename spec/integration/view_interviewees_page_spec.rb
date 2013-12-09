@@ -71,11 +71,11 @@ feature 'View the interviewees page' do
     visit interviewees_path
 
     page_has_correct_data_role 'interviewee_video_link'
+		expect(page).to have_css 'a.video_link', text: 'Video'
 	end
 
   scenario 'User sees Interviewee videos counter' do
-		interviewee_has_video
-
+		interviewee_has_video 
     visit interviewees_path
 
 		expect(page).to have_css 'span.video_counter', text: '1'
