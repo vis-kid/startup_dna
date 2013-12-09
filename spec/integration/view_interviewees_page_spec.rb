@@ -16,13 +16,11 @@ feature 'View the interviewees page' do
 	end
 
 	scenario 'User sees list of interviewees' do
-		interviewee01 = interviewee_named 'David J. Phillips'
-		interviewee02 = interviewee_named 'Christian Fernandez'
+		interviewee01 = basic_interviewee
+		interviewee02 = basic_interviewee
     
 		visit interviewees_path
 
-    user_sees_content 'David J. Phillips'
-    user_sees_content 'Christian Fernandez'
 		page_loads_correct_amount_of_interviewees 2
 		page_does_not_load_incorrect_amount_of_interviewees 1
 
