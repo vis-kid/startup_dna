@@ -1,11 +1,11 @@
 ###  INTERVIEWEE
 
-def interviewee_named(name)
-	create :interviewee, name: name
-end
-
 def basic_interviewee
 	create :interviewee
+end
+
+def interviewee_named(name)
+	create :interviewee, name: name
 end
 
 #####  VIDEO

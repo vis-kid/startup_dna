@@ -4,13 +4,15 @@ feature 'View the videos page' do
 
 	scenario 'User sees correct page title' do
 		visit videos_path
+		
 		user_sees_correct_page_title 'Videos'
 	end
 
 	scenario 'User sees Header "New Video"' do
 		visit videos_path
+
 		page_has_correct_data_role 'page_header'
-		user_sees_content 'New Video'
+		user_sees_content 'New Videos'
 	end
 
 	scenario 'User sees name of interviewee' do
