@@ -8,6 +8,15 @@ def interviewee_named(name)
 	create :interviewee, name: name
 end
 
+def interviewee_with_twitter_handle(twitter_handle)
+	create :interviewee, twitter_handle: twitter_handle
+end
+
+def interviewee_with_weblink(weblink)
+	create :interviewee, weblink: weblink
+end
+
+
 #####  VIDEO
 
 def basic_video

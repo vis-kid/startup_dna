@@ -46,6 +46,24 @@ feature 'View the interviewees page' do
     user_sees_content 'David J. Phillips'
     user_sees_content 'Christian Fernandez'
 	end
+
+  scenario 'User sees Interviewee twitter_handles' do
+		interviewee_with_twitter_handle '@davj'
+
+    visit interviewees_path
+
+    page_has_correct_data_role 'interviewee_twitter_handle'
+    user_sees_content '@davj'
+	end
+
+  scenario 'User sees Interviewee weblink' do
+		interviewee_with_weblink 'www.hackbrightacademy.com'
+
+    visit interviewees_path
+
+    page_has_correct_data_role 'interviewee_weblink'
+    user_sees_content 'www.hackbrightacademy.com'
+	end
 end
 
 def interviewee_with_about_text(about_text)
