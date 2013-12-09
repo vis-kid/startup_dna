@@ -16,8 +16,8 @@ feature 'View the interviewees page' do
 	end
 
 	scenario 'User sees list of interviewees' do
-		interviewee01 = basic_interviewee
-		interviewee02 = basic_interviewee
+		basic_interviewee
+		basic_interviewee
     
 		visit interviewees_path
 
@@ -27,8 +27,8 @@ feature 'View the interviewees page' do
 	end
 
   scenario 'User sees Interviewee about_texts' do
-		interviewee01 = interviewee_with_about_text 'David founded Hackbright Academy'
-		interviewee02 = interviewee_with_about_text 'Christian co-founded Hackbright Academy'
+		interviewee_with_about_text 'David founded Hackbright Academy'
+		interviewee_with_about_text 'Christian co-founded Hackbright Academy'
 
     visit interviewees_path
 
@@ -37,8 +37,8 @@ feature 'View the interviewees page' do
 	end
 
   scenario 'User sees Interviewee names' do
-		david =  interviewee_named 'David J. Phillips'
-		chrisz = interviewee_named 'Christian Fernandez'
+		interviewee_named 'David J. Phillips'
+		interviewee_named 'Christian Fernandez'
 
     visit interviewees_path
 
