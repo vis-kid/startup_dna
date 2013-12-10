@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'sqlite3'
 gem 'kaminari'
+gem 'faker'
 
 group :assets do
   gem 'coffee-rails', '~> 4.0.0'
