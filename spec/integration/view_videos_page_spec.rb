@@ -76,6 +76,21 @@ feature 'View the videos page' do
 		page_does_not_load_incorrect_amount_of_videos 3
 	end
 
+	scenario 'User sees correct paginated timeline with 15 videos' do
+		50.times do 
+			interviewee = basic_interviewee
+			2.times do
+				video = basic_video
+			interviewee.videos << video
+			end
+		end
+
+		visit videos_path
+
+		page_loads_correct_amount_of_videos 15
+		expect(page).to have_css 'nav.pagination'
+	end
+
 end
 
 def page_does_not_load_incorrect_amount_of_videos count 
