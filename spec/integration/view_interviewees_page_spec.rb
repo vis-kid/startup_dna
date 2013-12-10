@@ -79,6 +79,17 @@ feature 'View the interviewees page' do
 
 		expect(page).to have_css 'span.video_counter', text: '1'
 	end
+
+	scenario 'User sees correct paginated timeline with 15 Interviewees' do
+		50.times do 
+			interviewee = basic_interviewee
+		end
+
+		visit interviewees_path
+
+		page_loads_correct_amount_of_interviewees 15
+		expect(page).to have_css 'nav.pagination'
+	end
 end
 
 
