@@ -6,7 +6,13 @@
 	 	  <p  data-role='interviewee_about_text'><%= interviewee.about_text %></p>
 			<h3 data-role='interviewee_twitter_handle'><%= interviewee.twitter_handle %></h3>
 			<h3 data-role='interviewee_weblink'><%= interviewee.weblink %></h3>
-		<h5 data-role='interviewee_video_link'><span class='video_counter'><%= link_to( pluralize(interviewee.videos.count, 'Video'), '#', class: 'video_link') %></span></h5>
+
+			<h5 data-role='interviewee_video_link'>
+				<span class='video_counter'>
+					<%= link_to pluralize(interviewee.videos.count, 'Video'), '#', class: 'video_link' %>
+				</span>
+			</h5>
+
 		</li>
 	</ul>
 

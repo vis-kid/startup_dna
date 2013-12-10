@@ -16,9 +16,9 @@ feature 'View the videos page' do
 	end
 
 	scenario 'User sees name of interviewee' do
-		video01 = basic_video
+		video = basic_video
 		matsumoto = interviewee_named 'Matz'
-		matsumoto.videos << video01
+		matsumoto.videos << video
 
 		visit videos_path
 

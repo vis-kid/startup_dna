@@ -32,19 +32,17 @@ feature 'View the interviewees page' do
 
     visit interviewees_path
 
-		user_sees_content 'David founded Hackbright Academy'
     page_has_correct_data_role 'interviewee_about_text'
+		user_sees_content 'David founded Hackbright Academy'
 	end
 
   scenario 'User sees Interviewee names' do
 		interviewee_named 'David J. Phillips'
-		interviewee_named 'Christian Fernandez'
 
     visit interviewees_path
 
     page_has_correct_data_role 'interviewee_name'
     user_sees_content 'David J. Phillips'
-    user_sees_content 'Christian Fernandez'
 	end
 
   scenario 'User sees Interviewee twitter_handles' do
@@ -74,8 +72,9 @@ feature 'View the interviewees page' do
 		expect(page).to have_css 'a.video_link', text: 'Video'
 	end
 
-  scenario 'User sees Interviewee videos counter' do
+  scenario 'User sees Interviewee videos counter with correct number' do
 		interviewee_has_video 
+
     visit interviewees_path
 
 		expect(page).to have_css 'span.video_counter', text: '1'
