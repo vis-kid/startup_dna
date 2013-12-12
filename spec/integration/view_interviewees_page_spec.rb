@@ -88,7 +88,7 @@ feature 'View the interviewees page' do
 
 		visit interviewees_path
 
-		page_loads_correct_amount_of_interviewees 15
+		page_loads_correct_amount_of_interviewees 7
 		expect(page).to have_css 'nav.pagination'
 	end
 end
