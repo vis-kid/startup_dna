@@ -79,9 +79,11 @@ feature 'View the videos page' do
 	scenario 'User sees correct paginated timeline with 15 videos' do
 		50.times do 
 			interviewee = basic_interviewee
+
 			2.times do
 				video = basic_video
-			interviewee.videos << video
+
+			  interviewee.videos << video
 			end
 		end
 
