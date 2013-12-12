@@ -16,9 +16,10 @@ feature 'View the interviewees page' do
 	end
 
 	scenario 'User sees list of interviewees' do
-		basic_interviewee
-		basic_interviewee
-    
+		2.times do
+		  basic_interviewee
+		end 
+
 		visit interviewees_path
 
 		page_loads_correct_amount_of_interviewees 2
