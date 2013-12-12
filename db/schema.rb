@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206174501) do
+ActiveRecord::Schema.define(version: 20131212155133) do
 
   create_table "interviewees", force: true do |t|
     t.string   "name"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20131206174501) do
     t.string   "twitter_handle"
     t.string   "weblink"
     t.text     "about_text"
+    t.string   "user_pic_file_name"
+    t.string   "user_pic_content_type"
+    t.integer  "user_pic_file_size"
+    t.datetime "user_pic_updated_at"
   end
 
   add_index "interviewees", ["name"], name: "index_interviewees_on_name"
