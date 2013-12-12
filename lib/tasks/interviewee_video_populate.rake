@@ -5,22 +5,22 @@ namespace :db do
 
 		50.times do
 			name = Faker::Name.name
-			twitter_handle = Faker::Name.name
+			twitter_handle = '@' + Faker::Name.name
 			weblink = Faker::Internet.url
-			about_text = Faker::Lorem.paragraph(2)
+			about_text = Faker::Lorem.paragraph(5)
 
-			interviewee = Interviewee.create!(name: name, 
+			interviewee = Interviewee.create!(name:           name, 
 																				twitter_handle: twitter_handle,
-																				weblink: weblink,
-																				about_text: about_text)
+																				weblink:        weblink,
+																				about_text:     about_text)
 
 			30.times do
-				quote = Faker::Name.name
-				category = Faker::Name.name
-				description = Faker::Company.catch_phrase
+				quote = '"' + Faker::Company.catch_phrase + '"'
+				category = 'Some Example Category'
+				description = Faker::Lorem.paragraph(5)
 
-				video = Video.create!(quote: quote,
-															category: category,
+				video = Video.create!(quote:       quote,
+															category:    category,
 															description: description)
 
 			  interviewee.videos << video
