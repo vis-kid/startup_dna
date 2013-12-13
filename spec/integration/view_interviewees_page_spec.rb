@@ -46,6 +46,14 @@ feature 'View the interviewees page' do
     user_sees_content 'David J. Phillips'
 	end
 
+  scenario 'User sees Interviewee names' do
+		basic_interviewee
+
+    visit interviewees_path
+
+    page_has_correct_data_role 'interviewee_user_pic'
+	end
+
   scenario 'User sees Interviewee twitter_handles' do
 		interviewee_with_twitter_handle '@davj'
 
