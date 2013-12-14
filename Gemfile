@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'sqlite3'
 gem 'kaminari'
 gem 'faker'
 gem "paperclip", "~> 3.0"
@@ -28,6 +27,7 @@ group :doc do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails'
 	gem 'capybara'
 	gem 'spork-rails', github: 'sporkrb/spork-rails'
@@ -40,3 +40,10 @@ group :test do
 	gem 'factory_girl_rails'
 	gem 'shoulda-matchers'
 end
+
+group :production do
+  gem 'rails_12factor'
+	gem 'pg'
+end
+
+ruby "2.0.0"
