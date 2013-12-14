@@ -13,7 +13,7 @@ feature 'View the interviewee/new page' do
 		click_button 'Save Interviewee'
 
 		within("[data-role='interviewee_name']") do
-			expect(page).to have_content 'Sebastian Thrun'
+		  user_sees_content 'Sebastian Thrun'
 		end
 	end
 end
