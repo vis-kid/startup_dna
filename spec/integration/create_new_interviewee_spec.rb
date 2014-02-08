@@ -14,6 +14,7 @@ feature 'View the interviewee/new page' do
 
 		within("[data-role='interviewee_name']") do
 		  user_sees_content 'Sebastian Thrun'
+		expect(page).to have_content 'Sebastian Thrun'
 		end
 	end
 end
