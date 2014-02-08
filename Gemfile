@@ -4,6 +4,7 @@ gem 'rails', '4.0.0'
 gem 'kaminari'
 gem 'faker'
 gem "paperclip", "~> 3.0"
+gem 'high_voltage'
 
 group :assets do
   gem 'coffee-rails', '~> 4.0.0'
