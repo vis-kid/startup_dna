@@ -5,10 +5,14 @@ gem 'kaminari'
 gem 'faker'
 gem "paperclip", "~> 3.0"
 gem 'high_voltage'
+gem 'bourbon'
+gem 'neat'
 
 group :assets do
-  gem 'coffee-rails', '~> 4.0.0'
-  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails'
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'bourbon'
+  gem 'neat'
 end
 
 group :development do
@@ -32,7 +36,7 @@ group :test, :development do
   gem 'rspec-rails'
 	gem 'capybara'
 	gem 'spork-rails', github: 'sporkrb/spork-rails'
-	gem 'guard-spork', :github => 'guard/guard-spork'
+	gem 'guard-spork', github: 'guard/guard-spork'
 	gem 'rb-fsevent'
 	gem 'simplecov'
 end
