@@ -13,22 +13,22 @@
 
 // weird bug doesn't let me import via shorthand
 
-@import '_normalize.css.scss';
+@import 'partials/_normalize.css.scss';
 @import 'bourbon';
-@import '_grid-settings.css.scss';
+@import 'partials/_grid-settings.css.scss';
 @import 'neat';
-@import '_fontfaces.css.scss';
-@import '_custom_mixins.css.sass';
+@import 'partials/_variables.sass';
+@import 'partials/_fontfaces.css.scss';
+@import 'partials/_custom_mixins.css.sass';
 
-@import 'navbar.css.sass';
-@import 'footer.css.sass';
-@import 'homepage.css.sass';
-@import 'interviewees.css.sass';
-@import 'profile.css.sass';
-@import 'videos.css.sass';
-@import 'tags.css.sass';
+@import 'partials/navbar.css.sass';
+@import 'partials/footer.css.sass';
+@import 'partials/homepage.css.sass';
+@import 'partials/interviewees.css.sass';
+@import 'partials/profile.css.sass';
+@import 'partials/videos.css.sass';
+@import 'partials/tags.css.sass';
 
-$light_grey_background_color: #FFFFFF;
 
 body {
   font-size: 100%;
