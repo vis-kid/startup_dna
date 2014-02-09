@@ -1,16 +1,12 @@
-$light_grey_background_color: #F5F4F5
-$grey_text_color: #555
-$green_text_link_color: #82DACD
-
 .grey_squares_up
   +square_line('grey_square_up.png', 0px)
 
 .footer
   height: 62px
-  background-color: $light_grey_background_color
+  background-color: $footer-background-color
   a
     +transition(color, .2s  ease-in)
-    color: $grey_text_color
+    color: $grey-text-color
     text-decoration: none
     font-size: em(16, 13)
     font-family: $helvetica
@@ -25,4 +21,4 @@ $green_text_link_color: #82DACD
       height: 65px
       &:hover
         a 
-          color: darken($green_text_link_color, 20%)
+          color: darken($green-text-link-color, 20%)

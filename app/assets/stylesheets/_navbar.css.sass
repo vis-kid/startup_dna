@@ -1,6 +1,3 @@
-$grey_text_color: #555
-$light_green_background_color: #82DACD
-
 .white_squares_up
   +span-columns(12)
   +square_line('white_square_up.png', -8px)
@@ -12,7 +9,7 @@ $light_green_background_color: #82DACD
   a 
     +transition(color, .05s  ease-in)
     text-decoration: none
-    color: $grey_text_color
+    color: $grey-text-color
     display: block
     height: 55px
   ul
@@ -32,8 +29,8 @@ $light_green_background_color: #82DACD
       &:last-child
         border-right: none
       &:hover
-        background-color: $light_green_background_color 
+        background-color: $light-green-background_color 
         a
-          background-color: $light_green_background_color 
+          background-color: $light-green-background-color 
           color: white
                
