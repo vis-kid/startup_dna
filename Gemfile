@@ -7,10 +7,10 @@ gem "paperclip", "~> 3.0"
 gem 'high_voltage'
 gem 'bourbon'
 gem 'neat'
+gem 'sass-rails',   '~> 4.0.0'
 
 group :assets do
   gem 'coffee-rails'
-  gem 'sass-rails',   '~> 4.0.0'
 	gem 'bourbon'
   gem 'neat'
 end
