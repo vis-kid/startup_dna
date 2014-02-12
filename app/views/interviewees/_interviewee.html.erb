@@ -1,0 +1,43 @@
+<% content_for :interviewee_box, flush: true do  %>
+
+	<ul>
+		<li class='interviewee'>
+
+		<h2 class='interviewee-name' data-role='interviewee_name'>
+			<%= interviewee.name %>
+		</h2>
+
+		<h5 class='video-counter' data-role='interviewee_video_link'>
+			<%= link_to pluralize(interviewee.videos.count, 'Video'), '#' %>
+		</h5>
+
+		<div class='profile-picture' data-role='interviewee_user_pic'>
+			<div class='blue_squares_down'></div>
+			<%= image_tag interviewee.user_pic.url %>
+		</div>
+
+		<div class='about-text'>
+			<p data-role='interviewee_about_text'>
+			<%= simple_format interviewee.about_text %>
+			</p>
+		</div>
+
+		<h3 class='twitter-handle' data-role='interviewee_twitter_handle'>
+			<%= interviewee.twitter_handle %>
+		</h3>
+
+		<div class='tags'>
+			@tags not implemented yet
+		</div>
+
+		<h3 class='weblink' data-role='interviewee_weblink'>
+			<%= interviewee.weblink %>
+		</h3>
+
+		</li>
+	</ul>
+
+<% end %>
+
+  <%= render 'shared/list_item' %>
+
