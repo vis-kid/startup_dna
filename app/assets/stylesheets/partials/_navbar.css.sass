@@ -2,30 +2,35 @@
   +span-columns(12)
   +square_line('white_square_up.png', -8px)
 
-.navbar
+.navbar-wrapper
   width: 100%
+  background-image: url(grey_background.jpg)
+  
+
+.navbar
+  +outer-container
   height: 65px
   background-image: url(grey_background.jpg)
   a 
     +transition(color, .05s  ease-in)
     text-decoration: none
     color: $grey-text-color
-    display: block
-    height: 55px
     font:
       size: em(18, 13)
       family: karla-bold, $helvetica
   ul
     list-style-type: none
+    &:first-child
+      +shift(1)
     li
-      +span-columns(3)
+      +span-columns(2.94)
       +omega
       +transition(background-color, .05s  ease-in)
-      width: 25%
-      padding-top: 15px
+      padding:
+        top: 15px
       text-align: center
       border-right: 2px solid white
-      height: 60px
+      height: 65px
       &:last-child
         border-right: none
       &:hover
