@@ -1,5 +1,7 @@
 <%= provide :page_title, 'Videos' %>
 
-<h1 data-role='page_header'>New Videos</h1>
+<%= page_header('New Videos') %>
 
-<%= render 'shared/videos' %>
+<%= render @videos %>
+
+<%= paginate @videos %>
