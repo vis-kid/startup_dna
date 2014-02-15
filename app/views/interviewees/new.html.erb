@@ -1,41 +1,41 @@
 <%= form_for @interviewee, :url => interviewees_path, :html => { :multipart => true } do |form| %>
 
-	<div>
-		<%= form.label      :name %>
-	</div>
-	<div>
-		<%= form.text_field :name %>
-	</div>
+<div>
+	<%= form.label      :name %>
+</div>
+<div>
+	<%= form.text_field :name %>
+</div>
 
-	<div>
-		<%= form.label      :about_text %>
-	</div>
-	<div>
-		<%= form.text_area :about_text, size: "45x12" %>
-	</div>
+<div>
+	<%= form.label      :about_text %>
+</div>
+<div>
+	<%= form.text_area  :about_text, size: "45x12" %>
+</div>
 
-	<div>
-		<%= form.label      :twitter_handle %>
-	</div>
-	<div>
-		<%= form.text_field :twitter_handle %>
-	</div>
+<div>
+	<%= form.label      :twitter_handle %>
+</div>
+<div>
+	<%= form.text_field :twitter_handle %>
+</div>
 
-	<div>
-		<%= form.label      :weblink%>
-	</div>
-	<div>
-		<%= form.text_field :weblink%>
-	</div>
+<div>
+	<%= form.label      :weblink%>
+</div>
+<div>
+	<%= form.text_field :weblink%>
+</div>
 
-	<div>
-		<%= form.label      :user_pic %>
-	</div>
-	<div>
-		<%= form.file_field :user_pic %>
-	</div>
+<div>
+	<%= form.label      :user_pic %>
+</div>
+<div>
+	<%= form.file_field :user_pic %>
+</div>
 
-	<div>
-		<%= form.submit 'Save Interviewee' %>
-	</div>
+<div>
+	<%= form.submit 'Save Interviewee' %>
+</div>
 <% end %>
