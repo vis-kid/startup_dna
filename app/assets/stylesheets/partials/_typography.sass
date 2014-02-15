@@ -5,12 +5,19 @@
 +font-face(ribbon, 'ribbon/ribbon', normal, normal, $asset-pipeline: true)
 
 
+.page-header-wrapper
+  +outer-container
+
 .page-header
+  +shift(1)
   font:
     family: ribbon, $helvetica
     size: 80px
   color: $blue-page-header-color
-  text-align: center
-  letter-spacing: 11px
-  margin-top: 47px
+  letter-spacing: -1px
+  margin:
+    top: 37px
+    bottom: 20px
+
+
 
