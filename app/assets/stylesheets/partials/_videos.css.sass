@@ -1,60 +1,69 @@
-.blue_top_line, .full_width_video_wrapper
-  background-color: $blue-background-color
+// HIGHLIGHTS
 
-.blue_top_line
-  height: 3px
-  margin:
-    top: 35px
+.item-box
+  .video-quote,
+  .video-category,
+  .inline-interviewee-name,
+  .video-box,
+  .video-links,
+  .video-description
+    background:
+      color: tomato
 
-.full_width_video_wrapper
-  width: 100%
-  height: 773px
-  border:
-    top: 2px solid white
-    bottom: 1px solid white
 
-.video_container
-  +outer-container
 
-.top_quote, .video_title, .interviewee_name,
-.video_description
-  +span-columns(10)
-  
-.top_quote, .video, .video_title, .interviewee_name,
-.video_description, .video_source_links
-  background-color: red
 
-.top_quote, .video_title, .interviewee_name, .video_description, .video_source_links
-  padding-left: 10px
+.item-box
+  .video-quote
+    +span-columns(10)
 
-.top_quote, .video_title, .interviewee_name,
-.video_description, .video
-  +shift(1)
+.item-box
+  .video-description,
+  .video-category,
+  .video-box,
+    +span-columns(7)
 
-.top_quote, .video_title, .video, .interviewee_name, .video_description
-  margin-top: 10px
+.item-box
+  .video-links,
+  .inline-interviewee-name
+    +span-columns(3)
 
-.video_title, .interviewee_name
-  height: 35px
+.item-box
+  .video-quote,
+  .video-category,
+  .video-box,
+  .video-description
+    +shift(1)
+    margin-bottom: 20px
 
-.top_quote
-  height: 50px
+.item-box
+  .video-quote
+    font-size: 3em
 
-.video
-  +span-columns(7)
-  height: 290px
+.item-box
+  .video-category,
+  .inline-interviewee-name
+    font:
+      size: 1.4em
 
-.video_source_links
-  +span-columns(3)
-  margin-top: 239px
-  height: 60px
+.item-box
+  .video-box
+    height: 370px
 
-.video_description
-  height: 240px
+.item-box
+  .video-links
+    margin:
+      top: -92px
+    font:
+      size: 1.3em
+    li
+      margin:
+        bottom: 20px 
+      &:last-child
+        margin:
+          bottom: 0px
 
-.video_pillow
-  margin-bottom: 100px
-
-.blue_squares_down
-  +square_line('blue_square_down.png', 1px)
-
+.item-box
+  .video-description
+    font:
+      size: 1.4em
