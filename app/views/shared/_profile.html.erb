@@ -1,9 +1,37 @@
-<h1 class='user-profile-name'><%= @interviewee.name %></h1>
+<div class='inner-profile-wrapper'>
 
-<%= image_tag @interviewee.user_pic.url  %>
 
-<h2 class='user-profile-twitter-handle'><%= @interviewee.twitter_handle %></h2>
+	<div class='profile-pic-wrapper'>
+		<%= image_tag @interviewee.user_pic.url, 
+			class: 'profile-picture' %>
+	  <div class='white_squares_down'></div>
+	</div>
 
-<h2 class='user-profile-weblink'><%= @interviewee.weblink %></h2>
+	<div class='social-media'>
 
-<p class='user-profile-about-text'><%= @interviewee.about_text %></p>
+		<h3 class='profile-twitter-handle' 
+			data-role='profile_interviewee_twitter_handle'>
+			<%= @interviewee.twitter_handle %>
+		</h3>
+
+		<h3 class='profile-weblink' 
+			data-role='profile_interviewee_weblink'>
+			<%= @interviewee.weblink %>
+		</h3>
+
+	</div>
+
+
+	<h2 class='profile-interviewee-name' data-role='profile_interviewee_name'>
+		<%= @interviewee.name %>
+	</h2>
+
+		<div class='profile-about-text'>
+			<p data-role='profile_interviewee_about_text'>
+			<%= simple_format @interviewee.about_text %>
+			</p>
+		</div>
+	</div>
+
+
+
