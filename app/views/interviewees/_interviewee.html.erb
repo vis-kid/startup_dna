@@ -1,28 +1,38 @@
 <% content_for :interviewee_box, flush: true do  %>
-
 <ul>
   <li>
+   
+	<div class='interviewees-first-line'>
 
     <h2 class='interviewee-name' data-role='interviewee_name'>
-      <%= interviewee.name %>
+      <%= link_to interviewee.name, interviewees_profile_path(interviewee) %>
     </h2>
 
     <h5 class='video-counter' data-role='interviewee_video_link'>
       <%= link_to pluralize(interviewee.videos.count, 'Video'), '#' %>
     </h5>
 
-    <div class='profile-picture' data-role='interviewee_user_pic'>
-      <div class='blue_squares_down'></div>
-      <%= image_tag interviewee.user_pic.url %>
-    </div>
+	</div>
+
+	<div class='interviewees-second-line'>
+
+		<div class='pic-wrapper'>
+			<%= image_tag interviewee.user_pic.url, class: 'list-profile-picture' %>
+			<div class='blue_squares_down'></div>
+		</div>
 
     <div class='about-text'>
       <p data-role='interviewee_about_text'>
         <%= simple_format interviewee.about_text %>
       </p>
     </div>
+	
+	</div>
 
-    <h3 class='twitter-handle' data-role='interviewee_twitter_handle'>
+	<div class='interviewees-third-line'>
+
+		<h3 class='twitter-handle' 
+			  data-role='interviewee_twitter_handle'>
       <%= interviewee.twitter_handle %>
     </h3>
 
@@ -30,9 +40,12 @@
       @tags not implemented yet
     </div>
 
-    <h3 class='weblink' data-role='interviewee_weblink'>
+		<h3 class='weblink' 
+			  data-role='interviewee_weblink'>
       <%= interviewee.weblink %>
     </h3>
+
+	</div>
 
   </li>
 </ul>
