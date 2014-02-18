@@ -3,15 +3,29 @@
   .video-quote,
   .video-category,
   .inline-interviewee-name,
-  .video-box,
   .video-links,
   .video-description
+  
+  .video-box
     background:
       color: tomato
+
+.videos-first-line,
+.videos-second-line,
+.videos-thrid-line
+  +outer-container
 
 .item-box
   .video-quote
     +span-columns(10)
+    margin:
+      top: 20px
+      bottom: 40px
+    font:
+      family: $helvetica
+      size: 2.4em
+      weight: bold
+    color: #333
 
 .item-box
   .video-category,
@@ -34,17 +48,29 @@
   .video-box,
   .video-description
     +shift(1)
-    margin-bottom: 20px
 
 .item-box
-  .video-quote
-    font-size: 2.3em
+  .video-category,
+  .video-box,
+  .video-description
+    margin-bottom: 20px
 
 .item-box
   .video-category,
   .inline-interviewee-name
     font:
-      size: 1.4em
+      size: 1.2em
+      family: $helvetica
+    color: white
+
+.item-box
+  .video-category
+    text-transform: uppercase
+
+.item-box
+  .inline-interviewee-name
+  a
+    color: #333
 
 .item-box
   .video-box
@@ -52,10 +78,14 @@
 
 .item-box
   .video-links
+    +outer-container
+    +shift(8)
     margin:
-      top: -393px
+      top: -94px
     font:
       size: 1.3em
+      family: $helvetica
+    color: rgba(white, .8)
     li
       margin:
         bottom: 20px 
