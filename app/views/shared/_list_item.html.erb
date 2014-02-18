@@ -1,0 +1,19 @@
+<article>
+  <%= render 'shared/item_box_top_border' %> 
+  
+  <div class='list-item-outer-container'>
+    <div class='item-box'>
+  
+      <%= yield :interviewee_box %>
+      
+      <%= yield :video_box %>
+  
+    </div>
+
+		<%= render 'shared/item_box_bottom_line' %>
+  </div>
+  
+  <%= render 'shared/zig_zag_down' %> 
+</article> 
+
+
