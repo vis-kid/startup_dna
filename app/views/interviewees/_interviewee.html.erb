@@ -1,64 +1,64 @@
 <% content_for :interviewee_box, flush: true do  %>
-	<ul>
-		<li>
+  <ul>
+    <li>
 
-		<div class='interviewees-first-line'>
+      <div class='interviewees-first-line'>
+      
+				<h2 class='interviewee-name' 
+					  data-role='interviewee_name'>
+          <%= link_to interviewee.name, interviewees_profile_path(interviewee) %>
+        </h2>
+        
+				<h5 class='video-counter' 
+					  data-role='interviewee_video_link'>
+          <%= link_to pluralize(interviewee.videos.count, 'Video'), '#' %>
+        </h5>
+      
+      </div>
+      
+      <div class='interviewees-second-line'>
+      
+        <div class='pic-wrapper'>
+          <%= image_tag interviewee.user_pic.url, class: 'list-profile-picture' %>
+          <div class='blue_squares_down'></div>
+        </div>
+        
+        <div class='about-text'>
+          <p data-role='interviewee_about_text'>
+            <%= simple_format interviewee.about_text %>
+          </p>
+        </div>
+      
+      </div>
+      
+      <div class='interviewees-third-line'>
+      
+        <h3 class='twitter-handle' 
+            data-role='interviewee_twitter_handle'>
+          <%= interviewee.twitter_handle %>
+        </h3>
+        
+        <div class='tags'>
+          <ul>
+            <li>Tags</li>
+            <li>Steve Huffman</li>
+            <li>VC’s</li>
+            <li>Reddit</li>
+            <li>Loyalty</li>
+            <li>YC</li>
+          </ul>
+        </div>
+        
+        <h3 class='weblink' 
+            data-role='interviewee_weblink'>
+          <%= interviewee.weblink %>
+        </h3>
 
-			<h2 class='interviewee-name' data-role='interviewee_name'>
-				<%= link_to interviewee.name, interviewees_profile_path(interviewee) %>
-			</h2>
+      </div>
 
-			<h5 class='video-counter' data-role='interviewee_video_link'>
-				<%= link_to pluralize(interviewee.videos.count, 'Video'), '#' %>
-			</h5>
-
-		</div>
-
-		<div class='interviewees-second-line'>
-
-			<div class='pic-wrapper'>
-				<%= image_tag interviewee.user_pic.url, class: 'list-profile-picture' %>
-				<div class='blue_squares_down'></div>
-			</div>
-
-			<div class='about-text'>
-				<p data-role='interviewee_about_text'>
-				<%= simple_format interviewee.about_text %>
-				</p>
-			</div>
-
-		</div>
-
-		<div class='interviewees-third-line'>
-
-			<h3 class='twitter-handle' 
-				data-role='interviewee_twitter_handle'>
-				<%= interviewee.twitter_handle %>
-			</h3>
-
-			<div class='tags'>
-				<ul>
-					<li>Tags</li>
-					<li>Steve Huffman</li>
-					<li>VC’s</li>
-					<li>Reddit</li>
-					<li>Loyalty</li>
-					<li>YC</li>
-				</ul>
-			</div>
-
-			<h3 class='weblink' 
-				data-role='interviewee_weblink'>
-				<%= interviewee.weblink %>
-			</h3>
-
-		</div>
-
-		</li>
-	</ul>
-
+    </li>
+  </ul>
 <% end %>
-
 
 <%= render 'shared/list_item' %>
 
