@@ -4,13 +4,11 @@
 
       <div class='interviewees-first-line'>
       
-				<h2 class='interviewee-name' 
-					  data-role='interviewee_name'>
+				<h2 class='interviewee-name' data-role='interviewee_name'>
           <%= link_to interviewee.name, interviewees_profile_path(interviewee) %>
         </h2>
         
-				<h5 class='video-counter' 
-					  data-role='interviewee_video_link'>
+				<h5 class='video-counter' data-role='interviewee_video_link'>
           <%= link_to pluralize(interviewee.videos.count, 'Video'), '#' %>
         </h5>
       
@@ -33,8 +31,7 @@
       
       <div class='interviewees-third-line'>
       
-        <h3 class='twitter-handle' 
-            data-role='interviewee_twitter_handle'>
+        <h3 class='twitter-handle' data-role='interviewee_twitter_handle'>
           <%= interviewee.twitter_handle %>
         </h3>
         
@@ -49,8 +46,7 @@
           </ul>
         </div>
         
-        <h3 class='weblink' 
-            data-role='interviewee_weblink'>
+        <h3 class='weblink' data-role='interviewee_weblink'>
           <%= interviewee.weblink %>
         </h3>
 
@@ -61,4 +57,3 @@
 <% end %>
 
 <%= render 'shared/list_item' %>
-
