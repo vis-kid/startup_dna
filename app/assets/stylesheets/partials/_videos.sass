@@ -1,45 +1,25 @@
-// HIGHLIGHTS
 .item-box
   .video-quote,
   .video-category,
   .inline-interviewee-name,
-  .video-links,
-  .video-description
-  
-  .video-box
-    background:
-      color: tomato
+  .video-links
+    font:
+      family: $helvetica
+
+.item-box
+  .video-quote,
+  .video-description,
+  .inline-interviewee-name
+    color: $dark-grey-text-color
+
+.video-box
+  background:
+    color: tomato
 
 .videos-first-line,
 .videos-second-line,
 .videos-thrid-line
   +outer-container
-
-.item-box
-  .video-quote
-    +span-columns(10)
-    margin:
-      top: 20px
-      bottom: 40px
-    font:
-      family: $helvetica
-      size: 2.4em
-      weight: bold
-    color: #333
-
-.item-box
-  .video-category,
-  .video-box,
-    +span-columns(7)
-
-.item-box
-  .video-description
-    +span-columns(7)
-
-.item-box
-  .video-links,
-  .inline-interviewee-name
-    +span-columns(3)
 
 .item-box
   .video-quote,
@@ -52,14 +32,37 @@
   .video-category,
   .video-box,
   .video-description
+    +span-columns(7)
+
+header
+  margin-left: -22px
+
+.item-box
+  .video-quote
+    +span-columns(10)
+    margin:
+      top: 23px
+      bottom: 30px
+    font:
+      size: 2.6em
+      weight: bold
+
+.item-box
+  .video-links,
+  .inline-interviewee-name
+    +span-columns(3)
+
+.item-box
+  .video-description,
+  .video-category,
+  .video-box,
     margin-bottom: 20px
 
 .item-box
   .video-category,
   .inline-interviewee-name
     font:
-      size: 1.2em
-      family: $helvetica
+      size: 1.4em
     color: white
 
 .item-box
@@ -69,7 +72,8 @@
 .item-box
   .inline-interviewee-name
   a
-    color: #333
+    font:
+      weight: bold
 
 .item-box
   .video-box
@@ -83,7 +87,6 @@
       top: -94px
     font:
       size: 1.3em
-      family: $helvetica
     color: rgba(white, .8)
     li
       margin:
@@ -97,8 +100,6 @@
     font:
       size: 1.25em
       family: $georgia
-    color: #2d2d2d
     line-height: 1.45
     margin:
       top: 5px
-
