@@ -4,9 +4,9 @@
 
       <div class='interviewees-first-line'>
       
-<h2 class='interviewee-name' data-role='interviewee_name'>
-<%= link_to interviewee.name, interviewees_profile_path(interviewee) %>
-</h2>
+        <h2 class='interviewee-name' data-role='interviewee_name'>
+          <%= link_to interviewee.name, interviewees_profile_path(interviewee) %>
+        </h2>
         
         <h5 class='video-counter' data-role='interviewee_video_link'>
           <%= link_to pluralize(interviewee.videos.count, 'Video'), '#' %>
