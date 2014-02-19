@@ -15,7 +15,7 @@ namespace :db do
 																				about_text:     about_text)
 
 			30.times do
-				quote = '"' + Faker::Company.catch_phrase + '"'
+				quote = '“' + Faker::Company.catch_phrase + '”'
 				category = 'Some Example Category'
 				description = Faker::Lorem.paragraph(5)
 
