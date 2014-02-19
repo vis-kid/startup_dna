@@ -1,7 +1,3 @@
-// HIGHLIGHTS
-.tags
-  background-color: red
-
 .item-box
   .interviewee-name,
   .twitter-handle,
@@ -14,7 +10,9 @@
   +outer-container
 
 .interviewees-third-line
-  margin-top: 20px
+  margin:
+    top: 20px
+    bottom: 20px
 
 .item-box  
   .interviewee-name
@@ -69,17 +67,36 @@
       weight: bold
     color: #2d2d2d
 
+
 .item-box  
   .about-text, 
   .tags 
     +span-columns(6)
     overflow: hidden
+
+.item-box  
+  .about-text, 
     p
       font:
         size: 1.4em
         family: $georgia
       color: #2d2d2d
       line-height: 1.3em
+
+.item-box  
+  .tags
+    margin:
+      top: 10px
+    font:
+      family: $helvetica
+      size: 1.6em
+    color: white
+    line-height: 1.3em
+    text-transform: uppercase
+    li
+      display: inline-block
+      padding:
+        right: 20px
 
 .item-box  
   .twitter-handle,
@@ -97,7 +114,7 @@
 .item-box  
   .tags
     margin-left: 0px
-    height: 70px
+    height: 80px
 
 .item-box  
   .twitter-handle, 
