@@ -1,10 +1,5 @@
 // HIGHLIGHTS
-.interviewee-name,
-.about-text,
-.twitter-handle,
-.weblink,
-.tags,
-.video-counter  
+.tags
   background-color: red
 
 .item-box
@@ -18,16 +13,35 @@
 .interviewees-third-line
   +outer-container
 
+.interviewees-third-line
+  margin-top: 20px
+
 .item-box  
   .interviewee-name
     +span-columns(8)
-    margin-bottom: 20px
+    margin:
+      bottom: 30px
+      top: 22px
+    a
+      font:
+        family: $helvetica
+        size: 3em
+      color: white
+      letter-spacing: .5px
+      text-decoration: none
     
 .item-box  
   .video-counter
     +span-columns(2)
+    padding-top: 37px
     a
       float: right
+      font:
+        family: $helvetica
+        size: 1.5em
+        weight: bold
+      color: #2d2d2d
+      text-decoration: none
 
 .item-box
   .pic-wrapper
@@ -49,6 +63,11 @@
   .twitter-handle,
   .weblink
     +span-columns(4)
+    font:
+      family: $helvetica
+      size: 1.4em
+      weight: bold
+    color: #2d2d2d
 
 .item-box  
   .about-text, 
@@ -57,10 +76,12 @@
     overflow: hidden
     p
       font:
-        size: 25px
+        size: 1.4em
+        family: $georgia
+      color: #2d2d2d
+      line-height: 1.3em
 
 .item-box  
-  .interviewee-name,
   .twitter-handle,
   .video-counter
     margin-top: 10px
