@@ -56,8 +56,8 @@ describe Interviewee do
     end
 
   end
-
-	describe "Interviewee_Video association #videos"do
+	
+  describe "Interviewee_Video association #videos"do
     it 'responds to video' do
       interviewee = basic_interviewee
       expect(interviewee).to respond_to :videos
