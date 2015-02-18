@@ -1,76 +1,85 @@
 require 'spec_helper'
 
 describe Video do
+	
+  context '#quote' do
 
-	context '#quote' do
-
-		it 'responds to quote' do
+    it 'responds to quote' do
       video = video_has_a_quote
 
-			expect(video).to respond_to :quote
+      expect(video).to respond_to :quote
 		end
 
-		it 'returns the correct quote' do
+    it 'returns the correct quote' do
       video = video_with_quote 'Stanford is the best'
+      
+      expect(video.quote).to eq 'Stanford is the best'
+    end
 
-			expect(video.quote).to eq 'Stanford is the best'
-		end
-	end
+  end
 
-	context '#category' do
 
-		it 'responds to category' do
-			video = video_has_category
+  context '#category' do
 
-			expect(video).to respond_to :category
-		end
-
-		it 'returns the correct category' do
+    it 'responds to category' do
+      video = video_has_category
+      
+      expect(video).to respond_to :category
+    end
+    
+    it 'returns the correct category' do
       video = video_with_category 'Stanford and the Valley'
+      
+      expect(video.category).to eq 'Stanford and the Valley'
+    end
 
-			expect(video.category).to eq 'Stanford and the Valley'
-		end
-	end
+  end
 
-	context '#description' do
+  
+  context '#description' do
 
-		it 'responds to description' do
+    it 'responds to description' do
       video = video_has_description
-
-			expect(video).to respond_to :description
-		end
-
-		it 'returns the correct description' do
+      
+      expect(video).to respond_to :description
+    end
+    
+    it 'returns the correct description' do
       video = video_with_description 'This video explains the stuff'
 
-			expect(video.description).to eq 'This video explains the stuff'
-		end
+      expect(video.description).to eq 'This video explains the stuff'
+    end
+
 	end
 
-	context '#youtube_id' do
 
-		it 'responds to youtube_id' do
+  context '#youtube_id' do
+
+    it 'responds to youtube_id' do
       video = create :video, youtube_id: '12345678910'
 
-			expect(video).to respond_to :youtube_id
-		end
-	end
+      expect(video).to respond_to :youtube_id
+    end
+  
+  end
 
-	context '#vimeo_id' do
 
-		it 'responds to vimeo_id' do
+  context '#vimeo_id' do
+  
+    it 'responds to vimeo_id' do
       video = create :video
 
-			expect(video).to respond_to :vimeo_id
-		end
-	end
+      expect(video).to respond_to :vimeo_id
+    end
+  end
 
-	describe 'Interviewee association through #interviewee' do
 
-		it 'responds to interviewee' do
-			video = create :video
+  describe 'Interviewee association through #interviewee' do
 
-			expect(video).to respond_to :interviewee
-		end
-	end
+    it 'responds to interviewee' do
+      video = create :video
+
+      expect(video).to respond_to :interviewee
+    end
+  end
 end
