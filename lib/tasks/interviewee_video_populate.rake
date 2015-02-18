@@ -20,12 +20,12 @@ namespace :db do
     end
   end
 
-    def create_interviewee
-      Interviewee.create!(name: name, twitter_handle: twitter_handle, weblink: weblink, about_text: about_text)
-		end
+  def create_interviewee
+    Interviewee.create!(name: name, twitter_handle: twitter_handle, weblink: weblink, about_text: about_text)
+  end
 
-		def create_video
-      Video.create!(quote: quote, category: category, description: description)
-		end
+  def create_video
+    Video.create!(quote: quote, category: category, description: description)
+  end
 
 end
