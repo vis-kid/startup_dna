@@ -13,13 +13,9 @@ class IntervieweesController < ApplicationController
     redirect_to interviewees_path
 	end
 
-	private
+  private
 
   def interviewee_params 
-    params.require(:interviewee).permit(:name, 
-																				:about_text, 
-																				:twitter_handle, 
-																				:weblink, 
-																				:user_pic)
+    params.require(:interviewee).permit(:name, :about_text, :twitter_handle, :weblink, :user_pic)
 	end
 end
