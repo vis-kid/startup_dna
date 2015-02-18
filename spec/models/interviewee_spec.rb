@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Interviewee do
+
   context '#name' do
-  
     it 'responds to #name' do
       interviewee = named_interviewee
       expect(interviewee).to respond_to :name
@@ -15,8 +15,8 @@ describe Interviewee do
 
   end
 
+
   context '#twitter_handle' do
-    
     it 'responds to #twitter_handle' do
       interviewee = interviewee_has_twitter_handle
       expect(interviewee).to respond_to :twitter_handle
@@ -26,11 +26,10 @@ describe Interviewee do
       interviewee = interviewee_with_twitter_handle '@steve_huffmann'
       expect(interviewee.twitter_handle).to eq '@steve_huffmann'
     end
-
   end
-	
-  context '#weblink' do
 
+
+  context '#weblink' do
     it 'responds to #weblink' do
       interviewee = interviewee_has_weblink
       expect(interviewee).to respond_to :weblink
@@ -40,11 +39,10 @@ describe Interviewee do
       interviewee = interviewee_with_weblink 'www.hipmunk.com'
       expect(interviewee.weblink).to eq 'www.hipmunk.com'
     end
-
   end
-	
-  context '#about_text' do
 
+
+  context '#about_text' do
     it 'responds to #about_text' do
       interviewee = interviewee_has_about_text
       expect(interviewee).to respond_to :about_text
@@ -54,26 +52,25 @@ describe Interviewee do
       interviewee = interviewee_with_about_text 'He was a co-founder ...'
       expect(interviewee.about_text).to eq 'He was a co-founder ...'
     end
-
   end
 	
-  describe "Interviewee_Video association #videos"do
-    it 'responds to video' do
-      interviewee = basic_interviewee
-      expect(interviewee).to respond_to :videos
-    end
 
-    it 'associates user to user-specific videos' do
-      interviewee = basic_interviewee
-      correct_video = basic_video
-      other_video = basic_video
+describe "Interviewee_Video association #videos"do
+  it 'responds to video' do
+    interviewee = basic_interviewee
+    expect(interviewee).to respond_to :videos
+  end
 
-      interviewee.videos << correct_video
-      
-      expect(interviewee.videos).to include correct_video
-      expect(interviewee.videos).not_to include other_video
-      expect(interviewee.videos.length).to eq 1
-    end
+  it 'associates user to user-specific videos' do
+    interviewee = basic_interviewee
+    correct_video = basic_video
+    other_video = basic_video
+
+    interviewee.videos << correct_video
+    
+    expect(interviewee.videos).to include correct_video
+    expect(interviewee.videos).not_to include other_video
+    expect(interviewee.videos.length).to eq 1
   end
 end
 
