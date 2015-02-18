@@ -17,7 +17,7 @@ feature 'View the interviewees page' do
 
 	scenario 'User sees list of interviewees' do
 		2.times do
-		  basic_interviewee
+			basic_interviewee
 		end 
 
 		visit interviewees_path
@@ -27,64 +27,64 @@ feature 'View the interviewees page' do
 
 	end
 
-  scenario 'User sees Interviewee about_texts' do
+	scenario 'User sees Interviewee about_texts' do
 		interviewee_with_about_text 'David founded Hackbright Academy'
 		interviewee_with_about_text 'Christian co-founded Hackbright Academy'
 
-    visit interviewees_path
+		visit interviewees_path
 
-    page_has_correct_data_role 'interviewee_about_text'
+		page_has_correct_data_role 'interviewee_about_text'
 		user_sees_content 'David founded Hackbright Academy'
 	end
 
-  scenario 'User sees Interviewee names' do
+	scenario 'User sees Interviewee names' do
 		interviewee_named 'David J. Phillips'
 
-    visit interviewees_path
+		visit interviewees_path
 
-    page_has_correct_data_role 'interviewee_name'
-    user_sees_content 'David J. Phillips'
+		page_has_correct_data_role 'interviewee_name'
+		user_sees_content 'David J. Phillips'
 	end
 
-  scenario 'User sees Interviewee names' do
+	scenario 'User sees Interviewee names' do
 		basic_interviewee
 
-    visit interviewees_path
+		visit interviewees_path
 
-    page_has_correct_data_role 'interviewee_user_pic'
+		page_has_correct_data_role 'interviewee_user_pic'
 	end
 
-  scenario 'User sees Interviewee twitter_handles' do
+	scenario 'User sees Interviewee twitter_handles' do
 		interviewee_with_twitter_handle '@davj'
 
-    visit interviewees_path
+		visit interviewees_path
 
-    page_has_correct_data_role 'interviewee_twitter_handle'
-    user_sees_content '@davj'
+		page_has_correct_data_role 'interviewee_twitter_handle'
+		user_sees_content '@davj'
 	end
 
-  scenario 'User sees Interviewee weblink' do
+	scenario 'User sees Interviewee weblink' do
 		interviewee_with_weblink 'www.hackbrightacademy.com'
 
-    visit interviewees_path
+		visit interviewees_path
 
-    page_has_correct_data_role 'interviewee_weblink'
-    user_sees_content 'www.hackbrightacademy.com'
+		page_has_correct_data_role 'interviewee_weblink'
+		user_sees_content 'www.hackbrightacademy.com'
 	end
 
-  scenario 'User sees Interviewee videos link' do
+	scenario 'User sees Interviewee videos link' do
 		interviewee_has_video
 
-    visit interviewees_path
+		visit interviewees_path
 
-    page_has_correct_data_role 'interviewee_video_link'
+		page_has_correct_data_role 'interviewee_video_link'
 		expect(page).to have_css 'a.video_link', text: 'Video'
 	end
 
-  scenario 'User sees Interviewee videos counter with correct number' do
+	scenario 'User sees Interviewee videos counter with correct number' do
 		interviewee_has_video 
 
-    visit interviewees_path
+		visit interviewees_path
 
 		expect(page).to have_css 'span.video_counter', text: '1'
 	end
