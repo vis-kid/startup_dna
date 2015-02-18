@@ -1,26 +1,23 @@
 require 'spec_helper'
 
 describe Video do
-	
   context '#quote' do
 
     it 'responds to quote' do
       video = video_has_a_quote
 
       expect(video).to respond_to :quote
-		end
+    end
 
     it 'returns the correct quote' do
       video = video_with_quote 'Stanford is the best'
       
       expect(video.quote).to eq 'Stanford is the best'
     end
-
   end
 
 
   context '#category' do
-
     it 'responds to category' do
       video = video_has_category
       
@@ -32,12 +29,10 @@ describe Video do
       
       expect(video.category).to eq 'Stanford and the Valley'
     end
-
   end
 
   
   context '#description' do
-
     it 'responds to description' do
       video = video_has_description
       
@@ -49,23 +44,19 @@ describe Video do
 
       expect(video.description).to eq 'This video explains the stuff'
     end
-
-	end
+  end
 
 
   context '#youtube_id' do
-
     it 'responds to youtube_id' do
       video = create :video, youtube_id: '12345678910'
 
       expect(video).to respond_to :youtube_id
     end
-  
   end
 
 
   context '#vimeo_id' do
-  
     it 'responds to vimeo_id' do
       video = create :video
 
@@ -75,7 +66,6 @@ describe Video do
 
 
   describe 'Interviewee association through #interviewee' do
-
     it 'responds to interviewee' do
       video = create :video
 
